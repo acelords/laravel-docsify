@@ -25,8 +25,10 @@ class DocsifyController extends Controller
      */
     public function index()
     {
-        Log::debug(__METHOD__);
-        Log::debug(config('docsify.route'));
+        if(config('docsify.enable_debug')) {
+            Log::debug(__METHOD__);
+            Log::debug(config('docsify.route'));
+        }
 
         return view('docsify::docs');
     }
@@ -36,7 +38,9 @@ class DocsifyController extends Controller
      */
     public function get($path)
     {
-        Log::debug(__METHOD__);
+        if(config('docsify.enable_debug')) {
+            Log::debug(__METHOD__);
+        }
 
         return response()->file(base_path('docs/'.$path));
     }
