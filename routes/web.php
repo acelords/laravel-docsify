@@ -13,10 +13,12 @@
 
 Route::group([
         'prefix' => config('docsify.route'),
-        'namespace' => '\\Mdebuf\\Docsify\\Http\Controllers',
+        'middleware' => config('docsify.middleware'),
+        'alias' => config('docsify.alias'),
+        'namespace' => '\\AceLords\\Docsify\\Http\Controllers',
     ], function () {
 
-	Route::get('/', 'DocsifyController@index')->name('docs.index');
-	Route::get('/{path}', 'DocsifyController@get')->name('docs.get')->where('path', '.*');
+	Route::get('/', 'DocsifyController@index')->name('index');
+	Route::get('/{path}', 'DocsifyController@get')->name('get')->where('path', '.*');
 
 });

@@ -1,6 +1,6 @@
 <?php
 
-namespace Mdebuf\Docsify;
+namespace AceLords\Docsify;
 
 use Illuminate\Support\ServiceProvider;
 

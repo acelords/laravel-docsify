@@ -1,6 +1,6 @@
 <?php
 
-namespace Mdebuf\Docsify\Http\Controllers;
+namespace AceLords\Docsify\Http\Controllers;
 
 use Log;
 use Illuminate\Http\Request;
@@ -31,6 +31,9 @@ class DocsifyController extends Controller
         return view('docsify::docs');
     }
 
+    /**
+     * get a single doc file
+     */
     public function get($path)
     {
         Log::debug(__METHOD__);
